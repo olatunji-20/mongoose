@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: pink;
+}
+
+.form-container {
+    background-color: floralwhite;
+    width: 600px;
+    height: auto;
+    margin: 0pc auto;
+    padding: 40px 5px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.field {
+    background-color: #f2f2f2;
+    height: 32px;
+    width: 70%;
+    margin: 0px 15px;
+    border: 1px solid green;
+    border-radius: 5px;
+    display: inline-block;
+    text-indent: 10px;
+}
+
+.para {
+    color: red;
+    font-size: 13px;
+    margin: 15px 60px 5px;
+    text-align: left;
+}
+
+.textareas {
+    width: 60%;
+    background-color: #f2f2f2;
+    height: 150px;
+    text-indent: 10px;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    background-color: forestgreen;
+    color: white;
+}

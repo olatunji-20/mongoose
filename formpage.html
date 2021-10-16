@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>form</title>
+    <link rel="stylesheet" href="formpage.css" type="text/css">
+</head>
+
+<body>
+    <h1>A form for submitting entries into mongoDB.</h1>
+    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore fugit, ut pariatur, eos maxime harum suscipit reiciendis dolorem deserunt tenetur placeat sequi fuga nobis fugiat cum, esse doloremque cumque.</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti assumenda veniam, nulla aspernatur adipisci nostrum enim possimus eaque explicabo consectetur quis dolor cumque, ducimus ipsum optio velit unde aut.
+    </p>
+    <H6>Password must start with an upper case letter followed by some Lower case letters then 1 or more numbers</H6>
+
+    <br><br><br><br><br><br>
+
+    <div class="form-container">
+
+        <h2>FORM FOR mongoDB</h2>
+        <br>
+        <form action="/" method="POST" enctype="multipart/form-data" onSubmit="return signUpCheck()">
+
+            <p class="para"></p>
+            <input type="text" placeholder="first name" class="field" name="firstname" id="firstname">
+
+            <p class="para"></p>
+            <input type="text" placeholder="surname" class="field" name="surname" id="surname">
+
+            <p class="para"></p>
+            <input type="email" placeholder="your email" class="field" name="email" id="email">
+
+            <p class="para"></p>
+            <input type="number" placeholder="phone number" class="field" name="phonenumber" id="phonenumber">
+
+            <p class="para"></p>
+            <input type="password" placeholder="password" class="field" name="password" id="password"><br><br>
+
+            <input placeholder="picture" class="field" name="pics" type="file"><br><br>
+
+            <textarea type="message" placeholder="message" class="textareas" name="message"></textarea><br><br><br><br>
+
+            <button type="submit">submit</button>
+
+
+        </form>
+    </div>
+
+
+
+
+    <script>
+        var firstNamer = function() {
+            var fName = document.getElementById("firstname").value;
+            if (!fName) {
+                document.getElementsByClassName("para")[0].innerHTML = "Please, input your first name.";
+                return false;
+            } else {
+                document.getElementsByClassName("para")[0].innerHTML = "";
+                return true;
+            }
+        }
+
+        var surnamer = function() {
+            var sName = document.getElementById("surname").value;
+            if (!sName) {
+                document.getElementsByClassName("para")[1].innerHTML = "Please, input your surname.";
+                return false;
+            } else {
+                document.getElementsByClassName("para")[1].innerHTML = "";
+                return true;
+            }
+        }
+
+        var emailer = function() {
+            var email = document.getElementById("email").value;
+            var emailReg = /^\S+@{1}\S+$/ig;
+            var emailTest = emailReg.test(email);
+
+            if (emailTest !== true) {
+                document.getElementsByClassName("para")[2].innerHTML = "Please, input a valid email address.";
+                return false;
+            } else {
+                document.getElementsByClassName("para")[2].innerHTML = "";
+                return true;
+            }
+        }
+
+        var phoner = function() {
+            var phoneDigit = document.getElementById("phonenumber").value;
+            var phoneLength = phoneDigit.length;
+
+            if (phoneLength > 11 || phoneLength < 11) {
+                document.getElementsByClassName("para")[3].innerHTML = "Please, input a valid phone number";
+                return false;
+            } else {
+                document.getElementsByClassName("para")[3].innerHTML = "";
+                return true;
+            }
+        }
+
+        var passworder = function() {
+            var password = document.getElementById("password").value;
+            var passReg = /^[A-Z]+[a-z]+[0-9]+$/;
+            var passwordTest = passReg.test(password);
+
+            if (passwordTest !== true) {
+                document.getElementsByClassName("para")[4].innerHTML = "Please, input a valid password";
+                return false;
+            } else {
+                document.getElementsByClassName("para")[4].innerHTML = "";
+                return true;
+            }
+        }
+
+
+
+        function signUpCheck() {
+            if (firstNamer() === true && surnamer() === true && emailer() === true && phoner() === true && passworder() === true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
