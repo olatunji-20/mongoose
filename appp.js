@@ -2,8 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const upload = require("express-fileupload");
 const mongoose = require("mongoose");
+
+// CONNECTION URI
 mongoose.connect("mongodb://localhost:27017/profileDB", { useNewUrlParser: true });
 
+// SCHEMA
 const profileSchema = new mongoose.Schema({
     firstname: String,
     surname: String,
