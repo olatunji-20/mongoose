@@ -13,10 +13,10 @@ const profileSchema = new mongoose.Schema({
     email: String,
     phonenumber: Number,
     password: String,
-    pics: {
-        data: Buffer,
-        contentType: String
-    },
+    // pics: {
+    //     data: Buffer,
+    //     contentType: String
+    // },
     message: String
 });
 
